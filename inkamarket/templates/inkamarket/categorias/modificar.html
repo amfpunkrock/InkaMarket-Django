@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Categoria</title>
+    <style>
+
+        body {
+            background-color: #2c3e50; /* Color de fondo oscuro */
+            color: white;             /* Letras blancas para que se lean */
+            text-align: center;       /* Centra todo el texto */
+            font-family: Arial;
+        }
+
+        table {
+            background-color: #f5f5dc;  /* La tabla blanca para que resalte */
+            color: black;             /* Letras de la tabla negras */
+            margin: auto;             /* Centra la tabla */
+            width: 60%;               /* Tabla más grande */
+            font-size: 20px;          /* Letras más grandes */
+        }
+
+        th, td {
+            padding: 10px;            /* Espacio dentro de las celdas */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color">Modificar Categoria</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID-Categoria</th>
+            <th>Nombre</th>
+        </tr>
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+        </tr>
+    </table>
+
+   <p style="color: #3498db; font-size: 25px;"><b>{{mensaje}}</b></p>
+
+    <br>
+    <a href="javascript:history.back()" style="color: white;">Volver</a>
+
+</body>
+</html>

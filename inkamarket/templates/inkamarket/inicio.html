@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>InkaMarket - Inicio</title>
+
+    <style>
+        /* Eliminamos los margenes por defecto del navegador */
+        body, html { margin: 0; padding: 0; height: 100%; font-family: Arial; }
+
+
+        .parte-superior {
+            background-color: #275e6b;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+
+        .parte-inferior {
+            background-color:#a8bec3 ; /* Un gris muy suave */
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+
+        .boton {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 12px;
+            background-color: #e67e22; /* Naranja Inka */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            width:180px
+        }
+        .boton:hover { background-color: #d35400; }
+    </style>
+</head>
+<body>
+
+    <div class="parte-superior">
+        <h1>GESTIÓN INKAMARKET</h1>
+            </div>
+
+    <div class="parte-inferior">
+        <div id="menu">
+            <a href="{% url 'categorias' %}" class="boton">CATEGORÍAS</a>
+            <a href="{% url 'productos' %}" class="boton">PRODUCTOS</a>
+            <a href="{% url 'clientes' %}" class="boton">CLIENTES</a>
+            <br>
+            <a href="{% url 'empleados' %}" class="boton">EMPLEADOS</a>
+            <a href="{% url 'proveedores' %}" class="boton">PROVEEDORES</a>
+            <a href="{% url 'contactos' %}" class="boton">CONTACTOS</a>
+        </div>
+
+        <br><br>
+        <img src="{% static 'imagenes/logo_inkamarket.jpg' %}" width=50% style="border-radius: 15px;margin-bottom: 50px; border: 4px solid black;">
+        <br>
+        <a href="/" class="boton">Cerrar Sesion</a>
+    </div>
+
+</body>
+</html>

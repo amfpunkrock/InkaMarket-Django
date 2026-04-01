@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de Clientes</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Caja principal centrada */
+        .estilo {
+            background-color: gray;
+            margin: 50px auto;
+            width: 450px;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+
+        .caja1 { background-color: green; padding: 10px; margin-bottom: 10px; }
+        .caja2 { background-color: blue; padding: 10px; margin-bottom: 10px; }
+        .caja3 { background-color: orange; padding: 10px; margin-bottom: 10px; }
+        .caja4 { background-color: purple; padding: 10px; }
+
+        h1 { text-align: center; color: black; }
+
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="estilo">
+    <h1>GESTION DE CLIENTES</h1>
+
+    <div class="caja1">
+        <form method="POST" action="alta/">
+            {% csrf_token %}
+            <h2 style="color:white">Alta</h2>
+            <label>DNI:</label><input type="text" name="txtdni"/> <br><br>
+            <label>Nombre:</label><input type="text" name="txtnombre"/> <br><br>
+            <label>Email:</label><input type="text" name="txtemail"/> <br><br>
+            <label>ciudad:</label><input type="text" name="txtciudad"/> <br><br>
+            <label>Accion:</label><input type="submit" value="presiona"/>
+        </form>
+    </div>
+
+    <div class="caja2">
+        <form method="POST" action="baja/">
+            {% csrf_token %}
+            <h2 style="color:white">Baja</h2>
+            <label>DNI:</label><input type="text" name="txtdni"/><br><br>
+            <label>Accion:</label><input type="submit" value="Presiona"/>
+        </form>
+    </div>
+
+    <div class="caja3">
+        <form method="POST" action="modificar/">
+            {% csrf_token %}
+            <h2 style="color:white">Modificar</h2>
+            <label>DNI:</label><input type="text" name="txtdni"/><br><br>
+            <label>Nombre:</label><input type="text" name="txtnombre"/><br><br>
+            <label>Email:</label><input type="text" name="txtemail"/> <br><br>
+            <label>ciudad:</label><input type="text" name="txtciudad"/> <br><br>
+            <label>Accion:</label><input type="submit" value="Presione"/>
+        </form>
+    </div>
+
+    <div class="caja4">
+        <form method="POST" action="consultar/">
+            {% csrf_token %}
+            <h2 style="color:white">Consulta</h2>
+            <label>Ver:</label><input type="submit" value="Presione"/>
+        </form>
+    </div>
+
+    <br>
+    <a href="javascript:history.back()">Volver</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de Productos</title>
+    <style>
+        /* Fondo oscuro igual al de categorías */
+        body {
+            background-color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }
+
+        /* Caja principal centrada */
+        .estilo {
+            background-color: gray;
+            margin: 50px auto;
+            width: 450px;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+        .caja1 { background-color: green; padding: 10px; margin-bottom: 10px; }
+        .caja2 { background-color: blue; padding: 10px; margin-bottom: 10px; }
+        /* La caja naranja la dejamos por estética o por si luego quieres modificar */
+        .caja3 { background-color: orange; padding: 10px; margin-bottom: 10px; }
+        .caja4 { background-color: purple; padding: 10px; }
+
+        h1 { text-align: center; color: black; }
+        h2 { color: white; margin-top: 0; }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="estilo">
+    <h1>GESTION DE PRODUCTOS</h1>
+
+    <div class="caja1">
+        <form method="POST" action="alta/">
+            {% csrf_token %}
+            <h2>Alta</h2>
+            <label>ID Pro:</label><input type="text" name="txtidproducto"/> <br><br>
+            <label>Nombre:</label><input type="text" name="txtnombre"/> <br><br>
+            <label>Precio:</label><input type="text" name="txtprecio"/> <br><br>
+            <label>ID Cat:</label><input type="text" name="txtid_categoria"/> <br><br>
+            <label>Accion:</label><input type="submit" value="presiona"/>
+        </form>
+    </div>
+
+    <div class="caja2">
+        <form method="POST" action="baja/">
+            {% csrf_token %}
+            <h2>Baja</h2>
+            <label>ID Pro:</label><input type="text" name="txtidproducto"/><br><br>
+            <label>Accion:</label><input type="submit" value="Presiona"/>
+        </form>
+    </div>
+
+    <div class="caja4">
+        <form method="POST" action="consultar/">
+            {% csrf_token %}
+            <h2>Consulta</h2>
+            <label>Ver:</label><input type="submit" value="Presione"/>
+        </form>
+    </div>
+
+    <br>
+    <a href="javascript:history.back()">Volver</a>
+</div>
+
+</body>
+</html>

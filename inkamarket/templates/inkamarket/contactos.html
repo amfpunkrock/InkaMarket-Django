@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>InkaMarket - Contacto</title>
+</head>
+<body style="background-color: #2c3e50; color: white; font-family: Arial;">
+
+    <h1 style="text-align:center">FORMULARIO DE CONTACTO</h1>
+
+    {% if mensaje %}
+        <h3 style="color: yellow; margin-left: 40%;">{{ mensaje }}</h3>
+    {% endif %}
+
+    <div style="background-color: gray; width: 500px; padding: 20px; border: 2px solid black; margin-left: 32%;">
+
+        <form method="POST" action="{% url 'contactos' %}"> <!--Aqui le pido que vaya al urls.py con name="contactos" , osea a la misma pagina-->
+            {% csrf_token %}
+
+            <p>
+                ID CONTACTO: <br>
+                <input type="text" name="txtidcontacto"/>
+            </p>
+
+            <p>
+                NOMBRE: <br>
+                <input type="text" name="txtnombre"/>
+            </p>
+
+            <p>
+                EMAIL: <br>
+                <input type="text" name="txtemail"/>
+            </p>
+
+            <p>
+                TIPO: <br>
+                <select name="txttipo" style="width: 170px;">
+                    <option value="CONSULTA">CONSULTA</option>
+                    <option value="PEDIDOS">PEDIDOS</option>
+                </select>
+            </p>
+
+            <p>
+                MENSAJE: <br>
+                <textarea name="txtmensaje" rows="5" cols="40"></textarea>
+            </p>
+
+            <input type="submit" value="ENVIAR MENSAJE">
+        </form>
+
+    </div>
+
+    <br>
+    <!--<a href="/" style="color: white; margin-left: 40%;">Volver al Inicio</a> -->
+    <a href="javascript:history.back()" style="color:white; margin-left: 37%;">Volver</a>
+
+</body>
+</html>
