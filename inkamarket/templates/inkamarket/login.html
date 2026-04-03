@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-	<style>
-              .caja1 {margin: 70px auto;
-
-			}
-        </style>
-
+    <style>
+        .caja1 {
+            background-color: red;
+            width: 500px;
+            padding: 20px;
+            border: 2px solid black;
+            /* 70px arriba, auto a los lados para centrar */
+            margin: 70px auto;
+        }
+    </style>
 </head>
 <body style="background-color: #2c3e50; color: white; font-family: Arial;">
 
-<div class="caja1">
 <h1 style="color:black; text-align:center">LOGIN</h1>
 
-   <div style="background-color: red; width: 500px; padding: 20px; border: 2px solid black; margin-left: 37%;">
-     <form method="POST" action="/">
-         {% csrf_token%}
-          <p>
-             USUARIO: <br>
-             <input type="text" name="txtusuario" placeholder="Usuario"/>
-          </p>
-          <p>
-             PASSWORD: <br>
-             <input type="text" name="txtpassword" placeholder="Password"/>
-          </p>
-          <p>
-              <input type="submit" value="Presiona"/>
-          </p>
-      </form>
-   <a href="/" class="boton" style="color:white; margin-left: 37%;" >Cerrar Sesion</a>
-   </div>
-
+<div class="caja1">
+    <form method="POST" action="/">
+        {% csrf_token %}
+        <p>
+            USUARIO: <br>
+            <input type="text" name="txtusuario" placeholder="Usuario" style="width: 95%"/>
+        </p>
+        <p>
+            PASSWORD: <br>
+            <input type="password" name="txtpassword" placeholder="Password" style="width: 95%"/>
+        </p>
+        <p style="text-align: center;">
+            <input type="submit" value="Presiona"/>
+        </p>
+    </form>
+    <div style="text-align: center;">
+        <a href="/" style="color:white; text-decoration: none;">Cerrar Sesion</a>
+    </div>
 </div>
 
 </body>
 </html>
-
-
